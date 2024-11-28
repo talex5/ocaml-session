@@ -68,5 +68,5 @@ let main () =
     Log.Global.info "webmachine_async_counter: listening on 0.0.0.0:%d%!" port
 
 let _ =
-  Mirage_crypto_rng_unix.initialize ();
+  Mirage_crypto_rng_unix.initialize (module Mirage_crypto_rng.Fortuna);
   Scheduler.go_main ~main ()

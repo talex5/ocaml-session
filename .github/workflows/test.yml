@@ -13,18 +13,18 @@ jobs:
         os:
           - ubuntu-latest
         ocaml-version:
-          - 4.07.0
+          - 4.13.0
 
     runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Use OCaml ${{ matrix.ocaml-version }}
-        uses: avsm/setup-ocaml@v1
+        uses: avsm/setup-ocaml@v3
         with:
-          ocaml-version: ${{ matrix.ocaml-version }}
+          ocaml-compiler: ${{ matrix.ocaml-version }}
 
       - name: Deps
         run: |
@@ -42,21 +42,19 @@ jobs:
         os:
           - ubuntu-latest
         ocaml-version:
-          - 4.08.1
-          - 4.10.2
-          - 4.11.2
-          - 4.12.0
+          - 4.14.0
+          - 5
 
     runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Use OCaml ${{ matrix.ocaml-version }}
-        uses: avsm/setup-ocaml@v1
+        uses: avsm/setup-ocaml@v3
         with:
-          ocaml-version: ${{ matrix.ocaml-version }}
+          ocaml-compiler: ${{ matrix.ocaml-version }}
 
       - name: Deps
         run: |

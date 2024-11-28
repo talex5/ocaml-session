@@ -15,5 +15,5 @@ let () =
     | Error e -> Some (Printf.sprintf "Postgresql.Error(%S)" (string_of_error e))
     | _ -> None
 
-let () = Mirage_crypto_rng_unix.initialize ()
+let () = Mirage_crypto_rng_unix.initialize (module Mirage_crypto_rng.Fortuna)
 module Test = Test_session.Make(Backend)
